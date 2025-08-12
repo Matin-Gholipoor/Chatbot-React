@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Chatbot</title>
+
+  <link rel="stylesheet" href="styles/chatbot.css">
+</head>
+
+<body>
+  <div class="js-container container"></div>
+
+  <script src="https://unpkg.com/supersimpledev/react.js"></script>
+  <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+  <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+
+  <script type="text/babel">
+    function ChatInputContainer(){
+      return (
+        <div class="chat-input-container">
+          <input type="text" placeholder="Send a message to Chatbot" />
+          <button>Send</button>
+        </div>
+      );
+    }
+
+    function MessagesSection(){
+      return (
+        <div class="messages-section">
+          Welcome to the chatbot project! Send a message using the textbox above.  
+        </div>
+      );
+    }
+
+    function PositionSwitcher(){
+      return (
+        <a class="position-switcher">
+          Move textbox to bottom
+        </a>
+      );
+    }
+
+    function App(){
+      return (
+        <>
+          <ChatInputContainer />
+          <MessagesSection />
+          <PositionSwitcher />
+        </>
+      );
+    }
+
+    const container = document.querySelector('.js-container');
+    const root = ReactDOM.createRoot(container);
+
+    root.render(<App />);
+  </script>
+</body>
+
+</html>
