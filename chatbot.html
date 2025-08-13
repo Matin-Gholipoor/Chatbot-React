@@ -24,7 +24,7 @@
         setInputText(event.target.value);
       }
 
-      function sendMessage() {
+      function sendMessage(event) {
         if(inputText){
           setMessages(
             [
@@ -42,8 +42,15 @@
             ]
           );
 
-          setInputText('')
+          setInputText('');
         }
+      }
+
+      function detectKey(event){
+        if(event.key === "Enter")
+          sendMessage();
+        else if(event.key === "Escape")
+          setInputText('');
       }
 
       return (
@@ -52,6 +59,7 @@
             type="text" 
             placeholder="Send a message to Chatbot" 
             onChange={saveInput}
+            onKeyDown={detectKey}
             value={inputText}
           />
           <button onClick={sendMessage}>
