@@ -68,3 +68,11 @@ body, html {
 
 	margin-bottom: 20px;
 }
+
+.message img{
+	width: 50px;
+}
+
+.message p{
+	display: inline-block;
+}

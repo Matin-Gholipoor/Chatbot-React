@@ -29,6 +29,7 @@
       return (
         <div class="messages-section">
           Welcome to the chatbot project! Send a message using the textbox above.  
+          <ChatMessages />
         </div>
       );
     }
@@ -38,6 +39,55 @@
         <a class="position-switcher">
           Move textbox to bottom
         </a>
+      );
+    }
+
+    function Message({text, sender}){
+      return(
+        <div class="message">
+          {
+            sender === 'robot' &&
+            <img src="images/robot.png" />
+          }
+          <p> 
+            {text}
+          </p>
+          {
+            sender === 'user' &&
+            <img src="images/user.png" />
+          }
+        </div>
+      );
+    }
+
+    function ChatMessages(){
+      const messages = [
+        {
+          text: 'Hello',
+          sender: 'user',
+        },
+        {
+          text: 'Hello! How can I help you?',
+          sender: 'robot',
+        },
+        {
+          text: 'Roll a dice',
+          sender: 'user',
+        },
+        {
+          text: 'Sure! You got 6',
+          sender: 'robot',
+        }
+      ];
+
+      return (
+        <>
+          {
+            messages.map((message)=>{
+              return <Message text={message.text} sender={message.sender} />
+            })
+          }
+        </>
       );
     }
 
