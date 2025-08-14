@@ -93,7 +93,12 @@
 
       return (
         <div className="messages-section" ref={messagesSectionRef}>
-          Welcome to the chatbot project! Send a message using the textbox above.  
+          {
+            !messages.length &&
+              <p>
+                Welcome to the chatbot project! Send a message using the textbox above.  
+              </p>
+          }
           <ChatMessages messages={messages} />
         </div>
       );
@@ -148,28 +153,7 @@
     }
 
     function App(){
-      const [messages, setMessages] = React.useState([
-        {
-          text: 'Hello',
-          sender: 'user',
-          id: crypto.randomUUID()
-        },
-        {
-          text: 'Hello! How can I help you?',
-          sender: 'robot',
-          id: crypto.randomUUID()
-        },
-        {
-          text: 'Roll a dice',
-          sender: 'user',
-          id: crypto.randomUUID()
-        },
-        {
-          text: 'Sure! You got 6',
-          sender: 'robot',
-          id: crypto.randomUUID()
-        }
-      ]);
+      const [messages, setMessages] = React.useState([]);
 
       const [inputContainerPosition, setInputContainerPosition] = React.useState('top');
 

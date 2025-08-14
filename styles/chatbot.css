@@ -8,6 +8,10 @@ body {
   flex-direction: column;
 
   height: 100vh;
+  max-width: 600px;
+  margin-inline: auto;
+
+  padding-inline: 10px;
 }
 
 .chat-input-container {
@@ -19,7 +23,6 @@ body {
 
   column-gap: 10px;
 
-  padding-inline: 10px;
   padding-top: 20px;
 }
 
@@ -52,18 +55,19 @@ body {
 }
 
 .messages-section {
-  color: rgb(120, 120, 120);
-
-  padding-inline: 10px;
-  text-align: center;
-
-  margin-inline: auto;
   margin-top: 20px;
 
   flex: 1;
 
   overflow: scroll;
   scrollbar-width: none;
+}
+
+.messages-section p {
+  color: rgb(120, 120, 120);
+
+  padding-inline: 10px;
+  text-align: center;
 }
 
 .position-switcher {
