@@ -82,8 +82,17 @@
     }
 
     function MessagesSection({messages}){
+      const messagesSectionRef = React.useRef(null);
+
+      React.useEffect(()=>{
+        const messagesSectionElem = messagesSectionRef.current;
+
+        if(messagesSectionElem)
+          messagesSectionElem.scrollTop = messagesSectionElem.scrollHeight;
+      }, [messages]);
+
       return (
-        <div className="messages-section">
+        <div className="messages-section" ref={messagesSectionRef}>
           Welcome to the chatbot project! Send a message using the textbox above.  
           <ChatMessages messages={messages} />
         </div>
@@ -98,12 +107,13 @@
       }
 
       return (
-        <a 
-          className="position-switcher"
-          onClick={switchInputContainerPosition}
-        >
-          Move textbox to {inputContainerPosition === 'top' ? 'bottom' : 'top'}
-        </a>
+        <div className="position-switcher">
+          <a
+            onClick={switchInputContainerPosition}
+          >
+            Move textbox to {inputContainerPosition === 'top' ? 'bottom' : 'top'}
+          </a>
+        </div>
       );
     }
 
