@@ -66,7 +66,7 @@
       }
 
       return (
-        <div class="chat-input-container">
+        <div className="chat-input-container">
           <input 
             type="text" 
             placeholder="Send a message to Chatbot" 
@@ -83,7 +83,7 @@
 
     function MessagesSection({messages}){
       return (
-        <div class="messages-section">
+        <div className="messages-section">
           Welcome to the chatbot project! Send a message using the textbox above.  
           <ChatMessages messages={messages} />
         </div>
@@ -92,7 +92,7 @@
 
     function PositionSwitcher(){
       return (
-        <a class="position-switcher">
+        <a className="position-switcher">
           Move textbox to bottom
         </a>
       );
@@ -100,7 +100,7 @@
 
     function Message({text, sender}){
       return(
-        <div class="message">
+        <div className={sender === 'robot' ? "robot-message" : "user-message"}>
           {
             sender === 'robot' &&
             <img src="images/robot.png" />
