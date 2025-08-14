@@ -1,5 +1,13 @@
 body{
   font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+.chatbot-container{
+  display: flex;
+  flex-direction: column;
+
+  height: 100vh;
 }
 
 .chat-input-container {
@@ -11,12 +19,8 @@ body{
 
   column-gap: 10px;
 
-  padding: 20px 10px;
-
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  padding-inline: 10px;
+  padding-top: 20px;
 }
 
 .chat-input-container input {
@@ -50,12 +54,16 @@ body{
 .messages-section {
   color: rgb(120, 120, 120);
 
-  padding: 80px 10px;
+  padding-inline: 10px;
   text-align: center;
 
-  flex: 1;
-  max-width: 600px;
   margin-inline: auto;
+  margin-top: 20px;
+
+  flex: 1;
+
+  overflow: scroll;
+  scrollbar-width: none;
 }
 
 .position-switcher {
@@ -66,11 +74,6 @@ body{
   text-align: center;
 
   padding-block: 20px;
-
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
 }
 
 .robot-message,

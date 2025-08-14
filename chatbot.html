@@ -9,7 +9,7 @@
 </head>
 
 <body>
-  <div class="js-container container"></div>
+  <div class="js-container"></div>
 
   <script src="https://unpkg.com/supersimpledev/react.js"></script>
   <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
@@ -90,10 +90,19 @@
       );
     }
 
-    function PositionSwitcher(){
+    function PositionSwitcher({inputContainerPosition, setInputContainerPosition}){
+      function switchInputContainerPosition(){
+        inputContainerPosition === 'top' ?
+          setInputContainerPosition('bottom') :
+          setInputContainerPosition('top')
+      }
+
       return (
-        <a className="position-switcher">
-          Move textbox to bottom
+        <a 
+          className="position-switcher"
+          onClick={switchInputContainerPosition}
+        >
+          Move textbox to {inputContainerPosition === 'top' ? 'bottom' : 'top'}
         </a>
       );
     }
@@ -152,15 +161,30 @@
         }
       ]);
 
+      const [inputContainerPosition, setInputContainerPosition] = React.useState('top');
+
       return (
-        <>
-          <InputContainer
-            messages={messages}
-            setMessages={setMessages}
-          />
+        <div className="chatbot-container">
+          {
+            inputContainerPosition === 'top' &&
+            <InputContainer
+              messages={messages}
+              setMessages={setMessages}
+            />
+          }
           <MessagesSection messages={messages} />
-          <PositionSwitcher />
-        </>
+          {
+            inputContainerPosition === 'bottom' &&
+            <InputContainer
+              messages={messages}
+              setMessages={setMessages}
+            />
+          }
+          <PositionSwitcher 
+            inputContainerPosition={inputContainerPosition}
+            setInputContainerPosition={setInputContainerPosition}
+          />
+        </div>
       );
     }
 
