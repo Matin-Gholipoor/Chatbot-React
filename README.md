@@ -30,7 +30,7 @@ While certain assets and setup instructions were provided by the course, I imple
 This project is based on a tutorial by **Simon Bao** on the **SuperSimpleDev** YouTube channel.  
 
 - **Instructor:** Simon Bao  
-- **Course Video:** [https://www.youtube.com/watch?v=-L0BSSQBWOI](https://www.youtube.com/watch?v=-L0BSSQBWOI)  
+- **Course Video:** [https://www.youtube.com/watch?v=TtPXvEcE11E](https://www.youtube.com/watch?v=TtPXvEcE11E)  
 - **Channel:** [https://www.youtube.com/@SuperSimpleDev](https://www.youtube.com/@SuperSimpleDev)
 
 This repository exists **solely for learning purposes**, and all appropriate credits are given to the original creator.
@@ -40,4 +40,4 @@ This repository exists **solely for learning purposes**, and all appropriate cre
 To run this project locally:
 
 1. Clone the repository
-2. Run amazon.html using a local server (e.g., Live Server)
+2. Run index.html using a local server (e.g., Live Server)
